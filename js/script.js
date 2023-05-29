@@ -16,14 +16,18 @@ function playerChoice(choice) {
   resultText.innerHTML = checkWinner();
   playerPoins.innerHTML = `Player Poin: ${playerPoin}`;
   computerPoins.innerHTML = `Computer Poin: ${computerPoin}`;
-  if (playerPoin === 5) {
-    alert("You Win!, Play Again?");
-    reset();
-  } else if (computerPoin === 5) {
-    alert("You Lose!, Play Again?");
-    reset();
-  }
+
+  setTimeout(() => {
+    if (playerPoin === 5) {
+      alert("You Win!, Play Again?");
+      reset();
+    } else if (computerPoin === 5) {
+      alert("You Lose!, Play Again?");
+      reset();
+    }
+  }, 100);
 }
+
 
 function computerChoice() {
   const randomNum = Math.floor(Math.random() * 3) + 1;
